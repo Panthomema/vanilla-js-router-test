@@ -9,9 +9,15 @@ export default class Router {
     document.addEventListener('click', this.handleClick.bind(this));
   }
 
+  hasRoute(path) {
+    return this.routes.some((route) => route.path === path);
+  }
+
   addRoute(route) {
     if (!(route instanceof Route)) throw new Error('Is not a route');
+
     this.routes.push(route);
+    console.log(this.routes);
   }
 
   handleClick(event) {
@@ -31,7 +37,7 @@ export default class Router {
   render() {
     const path = window.location.pathname;
     const matchingRoute = this.routes.find((route) => route.path === path);
-    
+
     if (matchingRoute) {
       this.currentRoute = matchingRoute;
       this.renderComponent(matchingRoute.component);
@@ -39,6 +45,6 @@ export default class Router {
   }
 
   renderComponent(component) {
-    console.log(component);
+    document.querySelector('#app').replaceChildren(component);
   }
 }

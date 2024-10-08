@@ -3,12 +3,26 @@ body {
   width: 100dvw;
   display: flex;
   flex-direction: column;
+  margin: unset;
+  padding: unset;
+}
+
+* {
+  scrollbar-gutter: stable;
+  box-sizing: border-box;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   padding: 1em;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.nav-link {
+  display: flex;
+  gap: 0.5em;
 }
 
 #app {
@@ -16,3 +30,12 @@ nav {
   display: grid;
   place-items: center;
 }
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em;
+}
+
