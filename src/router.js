@@ -31,6 +31,14 @@ export default class Router {
   render() {
     const path = window.location.pathname;
     const matchingRoute = this.routes.find((route) => route.path === path);
-    if (matchingRoute) console.log(matchingRoute.component);
+    
+    if (matchingRoute) {
+      this.currentRoute = matchingRoute;
+      this.renderComponent(matchingRoute.component);
+    }
+  }
+
+  renderComponent(component) {
+    console.log(component);
   }
 }
