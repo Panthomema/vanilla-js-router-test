@@ -1,9 +1,10 @@
 import { createNavLinkComponent, createPageComponent } from './functions';
-import Route from './route';
 import Router from './router';
+import Route from './route';
 import './style.css';
 
-const router = new Router();
+const router = Router.getInstance();
+console.log(router);
 
 const homeComponent = createPageComponent('home');
 const aboutComponent = createPageComponent('about');

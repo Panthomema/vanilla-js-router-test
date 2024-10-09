@@ -1,3 +1,4 @@
+
 function createPageComponent(name) {
   const page = document.createElement('div');
   page.textContent = `hello from ${name}`;
@@ -22,4 +23,5 @@ function createNavLinkComponent(name) {
 }
 
 
-export { createPageComponent, createNavLinkComponent };
+export { createNavLinkComponent, createPageComponent };
+
